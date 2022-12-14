@@ -1,17 +1,17 @@
+#include "Game.h"
+#include "RobotSmart.h"
+#include "RobotsSimple.h"
 #include <iostream>
 #include <libdio/display.h>
-#include "Game.h"
-#include "RobotDiagonal.cpp"
-#include "RobotWait.cpp"
 
 int main() {
     Game G;
-    G.addRobot(new RobotDiagonal());
-    G.addRobot(new RobotDiagonal());
-    G.addRobot(new RobotWait());
-    G.addRobot(new RobotWait());
-
-    // Add your robot here
+    for (int i = 0; i < 2; i++) {
+        G.addRobot(new RobotDiagonal());
+        G.addRobot(new RobotSmart());
+        G.addRobot(new RobotWait());
+        // Add your robot here
+    }
 
     auto winner = G.play();
     cout << Display::DString(Display::Color::YELLOW);
