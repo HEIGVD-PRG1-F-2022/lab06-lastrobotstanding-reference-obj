@@ -7,20 +7,16 @@ include(FetchContent)
 
 FetchContent_Declare(librobots
         GIT_REPOSITORY https://github.com/HEIGVD-PRG1-F-2022/librobots.git
-        GIT_TAG v0.2.5
+        GIT_TAG v0.2.7
         )
 FetchContent_MakeAvailable(librobots)
 
 FetchContent_Declare(libdio
         GIT_REPOSITORY https://github.com/HEIGVD-PRG1-F-2022/libdio.git
-        GIT_TAG v0.2.2
+        GIT_TAG v0.2.3
         )
 FetchContent_MakeAvailable(libdio)
 
-add_executable(ReferenceGameObj main.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/Game.cpp.obj
-        ${CMAKE_CURRENT_SOURCE_DIR}/RobotSmart.cpp.obj
-        ${CMAKE_CURRENT_SOURCE_DIR}/RobotsSimple.cpp.obj
-        )
+add_executable(ReferenceGameObj main.cpp)
 
-target_link_libraries(ReferenceGameObj PRIVATE librobots libdio)
+target_link_libraries(ReferenceGameObj PRIVATE librobots libdio ${CMAKE_SOURCE_DIR}/Reference.lib)
