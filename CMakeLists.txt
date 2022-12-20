@@ -17,6 +17,11 @@ FetchContent_Declare(libdio
         )
 FetchContent_MakeAvailable(libdio)
 
-add_executable(ReferenceGameObj main.cpp)
+add_executable(ReferenceGameObj main.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/all.cpp.obj
+        ${CMAKE_CURRENT_SOURCE_DIR}/Game.cpp.obj
+        ${CMAKE_CURRENT_SOURCE_DIR}/RobotSmart.cpp.obj
+        ${CMAKE_CURRENT_SOURCE_DIR}/RobotsSimple.cpp.obj
+        )
 
-target_link_libraries(ReferenceGameObj PRIVATE librobots libdio ${CMAKE_SOURCE_DIR}/Reference.lib)
+target_link_libraries(ReferenceGameObj PRIVATE librobots libdio)

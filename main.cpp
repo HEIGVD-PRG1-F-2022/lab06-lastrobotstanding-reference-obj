@@ -1,6 +1,7 @@
 #include "Game.h"
 #include "RobotSmart.h"
 #include "RobotsSimple.h"
+#include <cstring>
 #include <iostream>
 #include <libdio/display.h>
 
@@ -62,7 +63,7 @@ void gameSilent(size_t rounds) {
 
 void game() {
     Game G = setupGame();
-    auto winner = G.play(false);
+    auto winner = G.play(true);
     cout << Display::DString(Display::Color::YELLOW);
     if (winner == nullptr) {
         cout << "The game ended in a draw" << endl;
@@ -77,8 +78,8 @@ int main(int argc, char *argv[]) {
     if (argc == 3 && strcmp(argv[1], "--rounds") == 0) { rounds = stoul(argv[2]); }
     if (rounds == 1) {
         game();
-    } else {
-        gameSilent(rounds);
+//    } else {
+//        gameSilent(rounds);
     }
     return 0;
 }
