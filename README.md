@@ -31,8 +31,17 @@ results:
 
 Will launch 100 rounds and show the results.
 
+## Command Line Arguments
+
+- `--rounds 1000` - runs the game in silent mode for 1000 rounds
+- `--smart` - enables the smart robot - else it's only used in 50% of the live games, or not at all in the silent mode
+- `--standard` - uses the standard mode with no boni in the `radar` return and making a draw after 100 empty moves
+
 ## Changelog
 
+- v0.1.3
+  - Adding latest robots from 2022-12-21
+  - Added `--smart` and `--standard` arguments
 - v0.1.2
   - Adding latest robots from 2022-12-20
   - You can run with "--rounds 20" to run multiple rounds
